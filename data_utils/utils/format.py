@@ -97,7 +97,7 @@ def clean_output(string):
 def clean_json():
     o = open('dpo_data_jacard_cleaned.json','w')
     outputs = []
-    with open('/mnt/hwfile/ai4chem/leijingdi/code/critic-v/rebuttal/dpo_data_jacard.json','r') as f:
+    with open('./dpo_data_jacard.json','r') as f:
         data = json.load(f)
         for row in tqdm(data):
             

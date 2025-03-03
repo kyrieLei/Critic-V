@@ -37,7 +37,7 @@ def get_accuracy(data_dir):
     print(len(metrics))
 
 if __name__=='__main__':
-    data_dir = "/mnt/hwfile/ai4chem/leijingdi/code/critic-v/inference/results/realWorldQA"
+    data_dir = "./results/realWorldQA"
     get_accuracy(data_dir)
 
 
