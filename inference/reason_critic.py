@@ -251,8 +251,9 @@ def distributed_inference(rank, dataset, reason_model_name, reason_model_path, c
             "ground_truth":data['conversations'][1]['value'],
         })
 
-
-    output_file = f'./results/{dataset_name}/{reason_model_name}_{critic_model_path}_{rank}.json'
+    os.makedirs(f'./results/{dataset_name}', exist_ok=True)
+    output_file = f'./results/{dataset_name}/{reason_model_name}_{rank}.json'
+    print(output_file)
     with open(output_file,'wt',encoding='utf-8') as file:
         json.dump(results, file, indent=4, ensure_ascii=False)
 
