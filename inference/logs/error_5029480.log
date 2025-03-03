@@ -1,27 +1,0 @@
-/mnt/petrelfs/leijingdi/miniforge3/envs/ljd/lib/python3.10/site-packages/transformers/models/auto/image_processing_auto.py:590: FutureWarning: The image_processor_class argument is deprecated and will be removed in v4.42. Please use `slow_image_processor_class`, or `fast_image_processor_class` instead
-  warnings.warn(
-/mnt/petrelfs/leijingdi/miniforge3/envs/ljd/lib/python3.10/site-packages/transformers/models/auto/image_processing_auto.py:590: FutureWarning: The image_processor_class argument is deprecated and will be removed in v4.42. Please use `slow_image_processor_class`, or `fast_image_processor_class` instead
-  warnings.warn(
-Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.48, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
-You are using the default legacy behaviour of the <class 'transformers.models.llama.tokenization_llama_fast.LlamaTokenizerFast'>. This is expected, and simply means that the `legacy` (previous) behavior will be used so nothing changes for you. If you want to use the new behaviour, set `legacy=False`. This should only be set if you understand what it means, and thoroughly read the reason why this was added as explained in https://github.com/huggingface/transformers/pull/24565 - if you loaded a llama tokenizer from a GGUF file you can ignore this message.
-Some kwargs in processor config are unused and will not have any effect: image_tag, sft_format, mask_prompt, ignore_id, add_special_token, num_image_tokens. 
-Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:01<00:02,  1.19s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:02<00:01,  1.16s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:03<00:00,  1.06s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:03<00:00,  1.09s/it]
-Traceback (most recent call last):
-  File "/mnt/hwfile/ai4chem/leijingdi/code/critic-v/inference/reason_critic.py", line 290, in <module>
-    spawn(
-  File "/mnt/petrelfs/leijingdi/miniforge3/envs/ljd/lib/python3.10/site-packages/torch/multiprocessing/spawn.py", line 282, in spawn
-    return start_processes(fn, args, nprocs, join, daemon, start_method="spawn")
-  File "/mnt/petrelfs/leijingdi/miniforge3/envs/ljd/lib/python3.10/site-packages/torch/multiprocessing/spawn.py", line 238, in start_processes
-    while not context.join():
-  File "/mnt/petrelfs/leijingdi/miniforge3/envs/ljd/lib/python3.10/site-packages/torch/multiprocessing/spawn.py", line 189, in join
-    raise ProcessRaisedException(msg, error_index, failed_process.pid)
-torch.multiprocessing.spawn.ProcessRaisedException: 
-
--- Process 0 terminated with the following error:
-Traceback (most recent call last):
-  File "/mnt/petrelfs/leijingdi/miniforge3/envs/ljd/lib/python3.10/site-packages/torch/multiprocessing/spawn.py", line 76, in _wrap
-    fn(i, *args)
-  File "/mnt/hwfile/ai4chem/leijingdi/code/critic-v/inference/reason_critic.py", line 257, in distributed_inference
-    with open(output_file,'wt',encoding='utf-8') as file:
-FileNotFoundError: [Errno 2] No such file or directory: './results/mathVista/deepseek-vl_deepseek-ai/deepseek-vl-7b-chat_0.json'
-

@@ -1,70 +1,0 @@
-/mnt/petrelfs/leijingdi/miniforge3/envs/ljd/lib/python3.10/site-packages/transformers/models/auto/image_processing_auto.py:590: FutureWarning: The image_processor_class argument is deprecated and will be removed in v4.42. Please use `slow_image_processor_class`, or `fast_image_processor_class` instead
-  warnings.warn(
-/mnt/petrelfs/leijingdi/miniforge3/envs/ljd/lib/python3.10/site-packages/transformers/models/auto/image_processing_auto.py:590: FutureWarning: The image_processor_class argument is deprecated and will be removed in v4.42. Please use `slow_image_processor_class`, or `fast_image_processor_class` instead
-  warnings.warn(
-/mnt/petrelfs/leijingdi/miniforge3/envs/ljd/lib/python3.10/site-packages/transformers/models/auto/image_processing_auto.py:590: FutureWarning: The image_processor_class argument is deprecated and will be removed in v4.42. Please use `slow_image_processor_class`, or `fast_image_processor_class` instead
-  warnings.warn(
-`Qwen2VLRotaryEmbedding` can now be fully parameterized by passing the model config through the `config` argument. All other arguments will be removed in v4.46
-`Qwen2VLRotaryEmbedding` can now be fully parameterized by passing the model config through the `config` argument. All other arguments will be removed in v4.46
-Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards:  20%|██        | 1/5 [00:07<00:28,  7.04s/it]Loading checkpoint shards:  20%|██        | 1/5 [00:07<00:29,  7.32s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:12<00:19,  6.36s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:13<00:19,  6.44s/it]Loading checkpoint shards:  60%|██████    | 3/5 [00:18<00:12,  6.04s/it]Loading checkpoint shards:  60%|██████    | 3/5 [00:18<00:12,  6.10s/it]Loading checkpoint shards:  80%|████████  | 4/5 [00:24<00:05,  5.93s/it]Loading checkpoint shards:  80%|████████  | 4/5 [00:24<00:05,  5.96s/it]Loading checkpoint shards: 100%|██████████| 5/5 [00:25<00:00,  4.35s/it]Loading checkpoint shards: 100%|██████████| 5/5 [00:25<00:00,  5.18s/it]
-Loading checkpoint shards: 100%|██████████| 5/5 [00:26<00:00,  4.39s/it]Loading checkpoint shards: 100%|██████████| 5/5 [00:26<00:00,  5.24s/it]
-You shouldn't move a model that is dispatched using accelerate hooks.
-You shouldn't move a model that is dispatched using accelerate hooks.
-W0116 16:03:21.901000 140159502022464 torch/multiprocessing/spawn.py:146] Terminating process 108407 via signal SIGTERM
-Traceback (most recent call last):
-  File "/mnt/hwfile/ai4chem/leijingdi/code/critic-v/inference/reason_critic.py", line 290, in <module>
-    spawn(
-  File "/mnt/petrelfs/leijingdi/miniforge3/envs/ljd/lib/python3.10/site-packages/torch/multiprocessing/spawn.py", line 282, in spawn
-    return start_processes(fn, args, nprocs, join, daemon, start_method="spawn")
-  File "/mnt/petrelfs/leijingdi/miniforge3/envs/ljd/lib/python3.10/site-packages/torch/multiprocessing/spawn.py", line 238, in start_processes
-    while not context.join():
-  File "/mnt/petrelfs/leijingdi/miniforge3/envs/ljd/lib/python3.10/site-packages/torch/multiprocessing/spawn.py", line 189, in join
-    raise ProcessRaisedException(msg, error_index, failed_process.pid)
-torch.multiprocessing.spawn.ProcessRaisedException: 
-
--- Process 1 terminated with the following error:
-Traceback (most recent call last):
-  File "/mnt/petrelfs/leijingdi/miniforge3/envs/ljd/lib/python3.10/site-packages/torch/multiprocessing/spawn.py", line 76, in _wrap
-    fn(i, *args)
-  File "/mnt/hwfile/ai4chem/leijingdi/code/critic-v/inference/reason_critic.py", line 245, in distributed_inference
-    history_ans, history_critic = critic_infer(question, image_url, reason_model_name, reason_model, reason_processor, critic_model_name, critic_model, critic_processor, device, chat_round=chat_round)
-  File "/mnt/petrelfs/leijingdi/miniforge3/envs/ljd/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
-    return func(*args, **kwargs)
-  File "/mnt/hwfile/ai4chem/leijingdi/code/critic-v/inference/reason_critic.py", line 135, in critic_infer
-    res = gen_one_answer(reason_model_name, reason_model, reason_processor, image_url, conversation,device)
-  File "/mnt/petrelfs/leijingdi/miniforge3/envs/ljd/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
-    return func(*args, **kwargs)
-  File "/mnt/hwfile/ai4chem/leijingdi/code/critic-v/inference/load_model.py", line 68, in gen_one_answer
-    ans = get_Qwen2VL_response(model, processor, image_url, conversation, device)
-  File "/mnt/petrelfs/leijingdi/miniforge3/envs/ljd/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
-    return func(*args, **kwargs)
-  File "/mnt/hwfile/ai4chem/leijingdi/code/critic-v/inference/get_multi_turn_reponse.py", line 88, in get_Qwen2VL_response
-    output_ids = model.generate(**input_ids, max_new_tokens = max_new_tokens)
-  File "/mnt/petrelfs/leijingdi/miniforge3/envs/ljd/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
-    return func(*args, **kwargs)
-  File "/mnt/petrelfs/leijingdi/miniforge3/envs/ljd/lib/python3.10/site-packages/transformers/generation/utils.py", line 2254, in generate
-    result = self._sample(
-  File "/mnt/petrelfs/leijingdi/miniforge3/envs/ljd/lib/python3.10/site-packages/transformers/generation/utils.py", line 3253, in _sample
-    outputs = self(**model_inputs, return_dict=True)
-  File "/mnt/petrelfs/leijingdi/miniforge3/envs/ljd/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
-    return self._call_impl(*args, **kwargs)
-  File "/mnt/petrelfs/leijingdi/miniforge3/envs/ljd/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
-    return forward_call(*args, **kwargs)
-  File "/mnt/petrelfs/leijingdi/miniforge3/envs/ljd/lib/python3.10/site-packages/accelerate/hooks.py", line 170, in new_forward
-    output = module._old_forward(*args, **kwargs)
-  File "/mnt/petrelfs/leijingdi/miniforge3/envs/ljd/lib/python3.10/site-packages/transformers/models/qwen2_vl/modeling_qwen2_vl.py", line 1638, in forward
-    inputs_embeds = self.model.embed_tokens(input_ids)
-  File "/mnt/petrelfs/leijingdi/miniforge3/envs/ljd/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
-    return self._call_impl(*args, **kwargs)
-  File "/mnt/petrelfs/leijingdi/miniforge3/envs/ljd/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
-    return forward_call(*args, **kwargs)
-  File "/mnt/petrelfs/leijingdi/miniforge3/envs/ljd/lib/python3.10/site-packages/accelerate/hooks.py", line 170, in new_forward
-    output = module._old_forward(*args, **kwargs)
-  File "/mnt/petrelfs/leijingdi/miniforge3/envs/ljd/lib/python3.10/site-packages/torch/nn/modules/sparse.py", line 164, in forward
-    return F.embedding(
-  File "/mnt/petrelfs/leijingdi/miniforge3/envs/ljd/lib/python3.10/site-packages/torch/nn/functional.py", line 2267, in embedding
-    return torch.embedding(weight, input, padding_idx, scale_grad_by_freq, sparse)
-RuntimeError: Expected all tensors to be on the same device, but found at least two devices, cuda:1 and cuda:0! (when checking argument for argument index in method wrapper_CUDA__index_select)
-
-/mnt/petrelfs/leijingdi/miniforge3/envs/ljd/lib/python3.10/multiprocessing/resource_tracker.py:224: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown
-  warnings.warn('resource_tracker: There appear to be %d '
