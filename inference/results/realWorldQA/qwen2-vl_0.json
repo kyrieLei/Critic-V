@@ -1,0 +1,15 @@
+[
+    {
+        "id": "bf57193477b05d1dcdc2bd733400fcf6",
+        "images": "/mnt/hwfile/ai4chem/CVPR/realworldqa/images/0.jpg",
+        "question": "<image>\nIn which direction is the front wheel of the car on the right side facing?\n\nA. Left\nB. Straight\nC. Right\nPlease answer directly with only the letter of the correct option and nothing else.",
+        "history answer": [
+            "A",
+            "A"
+        ],
+        "history critic": [
+            "The answer is incorrect. The front wheel of the car on the right side is facing left, not right."
+        ],
+        "ground_truth": "C"
+    }
+]

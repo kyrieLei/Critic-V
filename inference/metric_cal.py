@@ -28,17 +28,16 @@ def get_accuracy(data_dir):
         with open(json_file, 'r', encoding='utf-8') as f:
             data = json.load(f)
             dataset.append(data)
-    for data in dataset:
+
+    for data in dataset[0]:
         metrics.append(check(data['ground_truth'], data['history answer'][-1])) 
-
-
 
     metrics = [x for x in metrics if x is not None]
     print(f'Accuracy: {sum(metrics)/len(metrics)}')
     print(len(metrics))
 
 if __name__=='__main__':
-    data_dir = "./results/"
+    data_dir = "/mnt/hwfile/ai4chem/leijingdi/code/critic-v/inference/results/realWorldQA"
     get_accuracy(data_dir)
 
 

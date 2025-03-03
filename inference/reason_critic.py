@@ -272,7 +272,7 @@ if __name__=='__main__':
     parser.add_argument('--dataset_path', type=str, required=True, help='The path of dataset')
     parser.add_argument('--world_size', type=int, required=True, help='The number of GPUs')
     parser.add_argument('--master_addr', type=str, default='127.0.0.1', help='Communication address')
-    parser.add_argument('--master_port', type=str, default='34567', help='Communication port')
+    parser.add_argument('--master_port', type=str, default='11345', help='Communication port')
     parser.add_argument('--chat_round', type=int, default=2, help='The Critique round')
 
 
